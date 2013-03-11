@@ -1,0 +1,26 @@
+# windows
+
+Thumbs.db
+[Dd]ebug*/
+*.sdf
+[Rr]elease*/
+ipch/
+*.opensdf
+
+# os x
+
+*.mode*v*
+*.pbxuser
+*.xcbkptlist
+*.xcscheme
+*.xcworkspacedata
+*.xcuserstate
+xcschememanagement.plist
+build/
+.DS_Store
+xcuserdata/
+DerivedData/
+
+# other
+
+*.swp
