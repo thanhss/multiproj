@@ -78,10 +78,9 @@ bool HelloWorld::init()
 	/////////////////////////////
 	// 4. add player button
 		
-	CCSprite *player = CCSprite::create("player.png");
+	CCSprite *player = CCSprite::create("Player.png");
 
 	player->setPosition(ccp(visibleSize.width/2, visibleSize.height/2));
-	//player->setPosition(ccp(300.1, visibleSize.height/2));
 	this->addChild(player, 1);
     
     return true;
