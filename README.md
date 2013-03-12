@@ -26,3 +26,10 @@ In my case, the project would compile but not launch.  I needed
 to edit the scheme to make the HelloCpp program run,
 which I learned from [this post](http://stackoverflow.com/a/14308242/754381).
 
+## Project Creation Notes
+
+Set the search path for include files to the following.
+
+    "$(SDKROOT)/usr/include/libxml2/" "$(SRCROOT)/../../cocos2d-x/cocos2dx/include" "$(SRCROOT)/../../cocos2d-x/cocos2dx" "$(SRCROOT)/../../cocos2d-x/cocos2dx/platform/mac" "$(SRCROOT)/../../cocos2d-x/cocos2dx/kazmath/include"
+
+
