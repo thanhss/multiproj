@@ -41,6 +41,8 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
     <IntDir>$(Configuration).win32\</IntDir>
+    <PostBuildEventUseInBuild>
+    </PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -51,7 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;$(ProjectDir)..\..\cocos2d-x\CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -60,6 +62,10 @@
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;libcocos2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

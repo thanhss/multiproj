@@ -74,6 +74,15 @@ bool HelloWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
+
+	/////////////////////////////
+	// 4. add player button
+		
+	CCSprite *player = CCSprite::create("player.png");
+
+	//player->setPosition(ccp(visibleSize.width/2, visibleSize.height/2));
+	player->setPosition(ccp(300.1, visibleSize.height/2));
+	this->addChild(player, 1);
     
     return true;
 }
