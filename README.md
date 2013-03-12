@@ -28,6 +28,9 @@ which I learned from [this post](http://stackoverflow.com/a/14308242/754381).
 
 ## Project Creation Notes
 
+These are my notes on how I set up the project.  You don't need to do these
+if you are working from the multiproj project.
+
 Set the search path for include files to the following.
 
     "$(SDKROOT)/usr/include/libxml2/" "$(SRCROOT)/../../cocos2d-x/cocos2dx/include" "$(SRCROOT)/../../cocos2d-x/cocos2dx" "$(SRCROOT)/../../cocos2d-x/cocos2dx/platform/mac" "$(SRCROOT)/../../cocos2d-x/cocos2dx/kazmath/include"
