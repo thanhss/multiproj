@@ -10,12 +10,12 @@ I created this project from _samples/Cpp/HelloCpp_.
 
 ## Setup
 
-Clone cocos2d-x into the same folder that will contain this project (multiproj).
+Clone csusbdt/cocos2d-x into the same folder that will contain this project (multiproj).
 The following shows how to do this within a folder named _git_ under your
 home directory (~).
 
     cd ~/git
-    git clone https://github.com/cocos2d/cocos2d-x.git
+    git clone https://github.com/csusbdt/cocos2d-x
     git clone https://github.com/csusbdt/multiproj.git
  
 

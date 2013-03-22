@@ -1,11 +1,13 @@
 #include "stdafx.h"
 #include "AppDelegate.h"
+#include "SimpleAudioEngine.h"
 
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
 
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 AppDelegate::AppDelegate() {
 
@@ -13,6 +15,7 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {
+    SimpleAudioEngine::sharedEngine()->end();
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
@@ -68,6 +71,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     CCScene *pScene = HelloWorld::scene();
 
+    SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("background.mp3");
+    SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background.mp3", true);
+
     // run
     pDirector->runWithScene(pScene);
 
@@ -77,15 +84,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground() {
     CCDirector::sharedDirector()->stopAnimation();
-
-    // if you use SimpleAudioEngine, it must be pause
-    // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
     CCDirector::sharedDirector()->startAnimation();
-
-    // if you use SimpleAudioEngine, it must resume here
-    // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }
