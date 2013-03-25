@@ -106,7 +106,7 @@ void HelloWorld::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 	CCPoint location = touch->getLocation();
 	player->setPosition(location);
 
-	/*bool test = SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying();
+	bool test = SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying();
 	if( test)
 		SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 	else
