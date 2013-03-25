@@ -97,7 +97,7 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->end();
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS )
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
     exit(0);
 #endif
 }
