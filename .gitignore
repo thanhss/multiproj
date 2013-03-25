@@ -6,6 +6,7 @@ Thumbs.db
 [Rr]elease*/
 ipch/
 *.opensdf
+win32.vs2010/enc_temp_folder
 
 # os x
 

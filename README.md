@@ -22,9 +22,20 @@ home directory (~).
 ## Under Xcode
 
 Start Xcode and load the multiproj project.  Try to build and run.
-In my case, the project would compile but not launch.  I needed
-to edit the scheme to make the HelloCpp program run,
-which I learned from [this post](http://stackoverflow.com/a/14308242/754381).
+In my case, the project would compile but not launch.  I needed to do the following.
+
+- Select Product ... Scheme ... Edit Scheme.
+- Select the Info tab.
+- Set the Executable to HelloCpp.app.
+
+Also, you need to set the working directory to the Resource folder.
+Do the following.
+
+- Select Product ... Scheme ... Edit Scheme.
+- Select the Options tab.
+- Check the box to set a custom working directory.
+- Set the working directory to ``$(SRCROOT)/../Resources``.
+
 
 ## Project Creation Notes
 
