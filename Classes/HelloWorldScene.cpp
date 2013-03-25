@@ -82,10 +82,12 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
 
-	player = CCSprite::create("player.png");
-	player->setPosition(ccp(0,0));
+	player = CCSprite::create("dragon_sign.png");
+	
+	//player->setContentSize(CCSizeMake(player->getContentSize().width*3, player->getContentSize().height*3));
+	player->setPosition(ccp(visibleSize.width/3, visibleSize.height/3));
 
-	this->addChild(player);
+	this->addChild(player, 1);
     
     return true;
 }
@@ -104,12 +106,22 @@ void HelloWorld::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 {
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();
-	player->setPosition(location);
 
-	/*bool test = SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying();
-	if( test)
-		SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+	//resume music if click on player
+	//pause music if click on the other point
+	if(location.x > player->getPosition().x
+		&& location.x < (player->getPosition().x + player->getContentSize().width)
+		&& location.y > player->getPosition().y
+		&& location.y < (player->getPosition().y + player->getContentSize().height))
+
+	//bool test = SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying();
+	//if( test)
+		SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 	else
-		SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();*/
+		SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+		
+
+	//move player to touch point
+	player->setPosition(location);
 	
 }
