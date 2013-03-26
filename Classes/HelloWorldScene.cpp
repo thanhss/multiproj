@@ -7,13 +7,13 @@ USING_NS_CC;
 
 using namespace CocosDenshion;
 
-CCScene* HelloWorld::scene()
+CCScene* HelloWorldScene::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    HelloWorld *layer = HelloWorld::create();
+    HelloWorldScene *layer = HelloWorldScene::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -23,7 +23,7 @@ CCScene* HelloWorld::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool HelloWorldScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -48,7 +48,7 @@ bool HelloWorld::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorld::menuCloseCallback));
+                                        menu_selector(HelloWorldScene::menuCloseCallback));
     
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
@@ -88,12 +88,17 @@ bool HelloWorld::init()
 	player->setPosition(ccp(visibleSize.width/3, visibleSize.height/3));
 
 	this->addChild(player, 1);
+
+	SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("background.mp3");
+    SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background.mp3", true);
+
     
     return true;
 }
 
 
-void HelloWorld::menuCloseCallback(CCObject* pSender)
+void HelloWorldScene::menuCloseCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->end();
 
@@ -102,7 +107,7 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
-void HelloWorld::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
+void HelloWorldScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 {
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();
