@@ -22,7 +22,19 @@ public:
 
 	// touch callback
 	void ccTouchesEnded(cocos2d::CCSet* pTouches, cocos2d::CCEvent* pEvent);
+    
+    /*Not sure if maybe a pause screen would be a different scene where the paused instance would need to be used.
+      If so, we would need basic accessor and mutator functions for paused unless it should be a boolean.
+     */
+    void setPaused();
+    
+    bool getPaused();
+
+private:
+    bool paused;
 
 };
+
+
 
 #endif // __HELLOWORLD_SCENE_H__

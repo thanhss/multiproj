@@ -32,6 +32,8 @@ bool HelloWorldScene::init()
         return false;
     }
     
+    paused = false;
+    
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 	
@@ -97,7 +99,6 @@ bool HelloWorldScene::init()
     return true;
 }
 
-
 void HelloWorldScene::menuCloseCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->end();
@@ -112,19 +113,15 @@ void HelloWorldScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();
 
-	//resume music if click on player
-	//pause music if click on the other point
-	if(location.x > player->getPosition().x
-		&& location.x < (player->getPosition().x + player->getContentSize().width)
-		&& location.y > player->getPosition().y
-		&& location.y < (player->getPosition().y + player->getContentSize().height))
-
-	//bool test = SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying();
-	//if( test)
-		SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-	else
-		SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
-		
+    //Changes the play and pause state depending on paused instance
+    if(paused != false){
+        SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+        paused = false;
+    }
+    else{
+        SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+        paused = true;
+    }
 
 	//move player to touch point
 	player->setPosition(location);
