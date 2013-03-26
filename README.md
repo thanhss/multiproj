@@ -10,12 +10,12 @@ I created this project from _samples/Cpp/HelloCpp_.
 
 ## Setup
 
-Clone csusbdt/cocos2d-x into the same folder that will contain this project (multiproj).
+Clone cocos2d-x into the same folder that will contain this project (multiproj).
 The following shows how to do this within a folder named _git_ under your
 home directory (~).
 
     cd ~/git
-    git clone https://github.com/csusbdt/cocos2d-x
+    git clone https://github.com/cocos2d/cocos2d-x.git
     git clone https://github.com/csusbdt/multiproj.git
  
 
@@ -36,6 +36,11 @@ Do the following.
 - Check the box to set a custom working directory.
 - Set the working directory to ``$(SRCROOT)/../Resources``.
 
+## Under Visual Studio 2010 (Express or Professional)
+
+I don't remember what to do, but I beleive you need to configure the working directory,
+which you do in the project properties, under Debug.  Set the working directory
+to the Resources folder.
 
 ## Project Creation Notes
 
