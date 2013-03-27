@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "main.h"
-#include "../Classes/AppDelegate.h"
+#include "../Classes/MPApplication.h"
 #include "CCEGLView.h"
 
 USING_NS_CC;
@@ -14,7 +14,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // create the application instance
-    AppDelegate app;
+    MPApplication app;
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("Multiproj");
     eglView->setFrameSize(2048, 1536);

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "HelloMapScene.h"
-#include "HelloWorldScene.h"
+#include "HelloTitleScene.h"
 #include "AppMacros.h"
 
 USING_NS_CC;
@@ -57,5 +57,5 @@ bool HelloMapScene::init()
 
 void HelloMapScene::menuCloseCallback(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(HelloWorldScene::scene());
+	CCDirector::sharedDirector()->replaceScene(HelloTitleScene::scene());
 }

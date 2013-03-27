@@ -8,11 +8,11 @@
 
 The reason for implement as private inheritance is to hide some interface call by CCDirector.
 */
-class  AppDelegate : private cocos2d::CCApplication
+class  MPApplication : private cocos2d::CCApplication
 {
 public:
-    AppDelegate();
-    virtual ~AppDelegate();
+    MPApplication();
+    virtual ~MPApplication();
 
     /**
     @brief    Implement CCDirector and CCScene init code here.
@@ -34,5 +34,5 @@ public:
     virtual void applicationWillEnterForeground();
 };
 
-#endif // _APP_DELEGATE_H_
+#endif
 

@@ -1,23 +1,23 @@
 #include "stdafx.h"
-#include "AppDelegate.h"
+#include "MPApplication.h"
 #include "SimpleAudioEngine.h"
-#include "HelloMapScene.h"
-#include "AppMacros.h"
+#include "MPTitleScene.h"
+#include "MPMacros.h"
 
 USING_NS_CC;
 using namespace std;
 using namespace CocosDenshion;
 
-AppDelegate::AppDelegate() {
-
+MPApplication::MPApplication() 
+{
 }
 
-AppDelegate::~AppDelegate() 
+MPApplication::~MPApplication() 
 {
     SimpleAudioEngine::sharedEngine()->end();
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
+bool MPApplication::applicationDidFinishLaunching() {
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
@@ -68,22 +68,21 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-//    CCScene *pScene = HelloWorld::scene();
-    CCScene *pScene = HelloMapScene::scene();
-    // run
-    pDirector->runWithScene(pScene);
+    CCScene *pScene = MPTitleScene::create();
+
+	pDirector->runWithScene(pScene);
 
     return true;
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
-void AppDelegate::applicationDidEnterBackground() {
+void MPApplication::applicationDidEnterBackground() {
     CCDirector::sharedDirector()->stopAnimation();
     SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
-void AppDelegate::applicationWillEnterForeground() {
+void MPApplication::applicationWillEnterForeground() {
     CCDirector::sharedDirector()->startAnimation();
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }

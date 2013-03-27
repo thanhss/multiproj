@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "HelloWorldScene.h"
+#include "HelloAudioScene.h"
+#include "HelloTitleScene.h"
 #include "AppMacros.h"
 #include "SimpleAudioEngine.h"
 
@@ -7,13 +8,13 @@ USING_NS_CC;
 
 using namespace CocosDenshion;
 
-CCScene* HelloWorldScene::scene()
+CCScene* HelloAudioScene::scene()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    HelloWorldScene *layer = HelloWorldScene::create();
+    HelloAudioScene *layer = HelloAudioScene::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -23,7 +24,7 @@ CCScene* HelloWorldScene::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorldScene::init()
+bool HelloAudioScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -50,7 +51,7 @@ bool HelloWorldScene::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(HelloWorldScene::menuCloseCallback));
+                                        menu_selector(HelloAudioScene::menuCloseCallback));
     
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
@@ -66,7 +67,7 @@ bool HelloWorldScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", TITLE_FONT_SIZE);
+    CCLabelTTF* pLabel = CCLabelTTF::create("Audio Scene", "Arial", TITLE_FONT_SIZE);
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
@@ -99,7 +100,7 @@ bool HelloWorldScene::init()
     return true;
 }
 
-void HelloWorldScene::menuCloseCallback(CCObject* pSender)
+void HelloAudioScene::menuCloseCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->end();
 
@@ -108,7 +109,7 @@ void HelloWorldScene::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
-void HelloWorldScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
+void HelloAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 {
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();
