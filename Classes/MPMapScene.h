@@ -3,15 +3,18 @@
 
 #include "cocos2d.h"
 
+USING_NS_CC;
+
 class MPMapScene : public cocos2d::CCScene
 {
 public:
     static cocos2d::CCScene* create();
 
-    void menuCloseCallback(CCObject* pSender);
+    void titleCallback(CCObject* pSender);
     
-    // implement the "static node()" method manually
-    CREATE_FUNC(HelloMapScene);
+private:
+    static CCLayer *createLayer();
+
 
 };
 

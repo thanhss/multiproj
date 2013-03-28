@@ -22,8 +22,6 @@
 		41CD6C6615BF7574005E6F29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CD6C6415BF7574005E6F29 /* main.m */; };
 		41CD6C6E15BF7673005E6F29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41CD6C6815BF7673005E6F29 /* InfoPlist.strings */; };
 		41CD6C6F15BF7673005E6F29 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CD6C6A15BF7673005E6F29 /* MainMenu.xib */; };
-		41CD6C7515BF76FB005E6F29 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CD6C7115BF76FB005E6F29 /* AppDelegate.cpp */; };
-		41CD6C7615BF76FB005E6F29 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CD6C7315BF76FB005E6F29 /* HelloWorldScene.cpp */; };
 		41CD6C8F15BF7793005E6F29 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C8715BF7793005E6F29 /* AppKit.framework */; };
 		41CD6C9015BF7793005E6F29 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C8815BF7793005E6F29 /* AudioToolbox.framework */; };
 		41CD6C9115BF7793005E6F29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C8915BF7793005E6F29 /* Cocoa.framework */; };
@@ -34,7 +32,11 @@
 		41CD6C9615BF7793005E6F29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C8E15BF7793005E6F29 /* QuartzCore.framework */; };
 		41CD6C9915BF77CE005E6F29 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C9715BF77CE005E6F29 /* libxml2.dylib */; };
 		41CD6C9A15BF77CE005E6F29 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6C9815BF77CE005E6F29 /* libz.dylib */; };
-		F835808E1701276E00322F69 /* HelloMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F835808C1701276E00322F69 /* HelloMapScene.cpp */; };
+		F82987C41703B68F00EE6CF7 /* MPApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987B91703B68F00EE6CF7 /* MPApplication.cpp */; };
+		F82987C51703B68F00EE6CF7 /* MPAudioScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987BB1703B68F00EE6CF7 /* MPAudioScene.cpp */; };
+		F82987C61703B68F00EE6CF7 /* MPBox2DScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */; };
+		F82987C71703B68F00EE6CF7 /* MPMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */; };
+		F82987C81703B68F00EE6CF7 /* MPTitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,6 @@
 		1514DA3C163004980095A81C /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = ../Resources/ipad; sourceTree = "<group>"; };
 		1514DA3D163004980095A81C /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = ../Resources/ipadhd; sourceTree = "<group>"; };
 		1514DA3E163004980095A81C /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = ../Resources/iphone; sourceTree = "<group>"; };
-		15A6969B1630E63B00D7A229 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../Classes/AppMacros.h; sourceTree = "<group>"; };
 		31071B7716FD7A6B0088E628 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
 		31071B7816FD7A6B0088E628 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
 		31071B7916FD7A6B0088E628 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
@@ -77,10 +78,6 @@
 		41CD6C6B15BF7673005E6F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = MainMenu.xib; sourceTree = "<group>"; };
 		41CD6C6C15BF7673005E6F29 /* HelloCpp_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HelloCpp_Info.plist; sourceTree = "<group>"; };
 		41CD6C6D15BF7673005E6F29 /* HelloCpp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloCpp_Prefix.pch; sourceTree = "<group>"; };
-		41CD6C7115BF76FB005E6F29 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		41CD6C7215BF76FB005E6F29 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		41CD6C7315BF76FB005E6F29 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		41CD6C7415BF76FB005E6F29 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		41CD6C8715BF7793005E6F29 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		41CD6C8815BF7793005E6F29 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		41CD6C8915BF7793005E6F29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -91,8 +88,17 @@
 		41CD6C8E15BF7793005E6F29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		41CD6C9715BF77CE005E6F29 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		41CD6C9815BF77CE005E6F29 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F835808C1701276E00322F69 /* HelloMapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloMapScene.cpp; path = ../Classes/HelloMapScene.cpp; sourceTree = "<group>"; };
-		F835808D1701276E00322F69 /* HelloMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloMapScene.h; path = ../Classes/HelloMapScene.h; sourceTree = "<group>"; };
+		F82987B91703B68F00EE6CF7 /* MPApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPApplication.cpp; path = ../Classes/MPApplication.cpp; sourceTree = "<group>"; };
+		F82987BA1703B68F00EE6CF7 /* MPApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPApplication.h; path = ../Classes/MPApplication.h; sourceTree = "<group>"; };
+		F82987BB1703B68F00EE6CF7 /* MPAudioScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPAudioScene.cpp; path = ../Classes/MPAudioScene.cpp; sourceTree = "<group>"; };
+		F82987BC1703B68F00EE6CF7 /* MPAudioScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAudioScene.h; path = ../Classes/MPAudioScene.h; sourceTree = "<group>"; };
+		F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPBox2DScene.cpp; path = ../Classes/MPBox2DScene.cpp; sourceTree = "<group>"; };
+		F82987BE1703B68F00EE6CF7 /* MPBox2DScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBox2DScene.h; path = ../Classes/MPBox2DScene.h; sourceTree = "<group>"; };
+		F82987BF1703B68F00EE6CF7 /* MPMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMacros.h; path = ../Classes/MPMacros.h; sourceTree = "<group>"; };
+		F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPMapScene.cpp; path = ../Classes/MPMapScene.cpp; sourceTree = "<group>"; };
+		F82987C11703B68F00EE6CF7 /* MPMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMapScene.h; path = ../Classes/MPMapScene.h; sourceTree = "<group>"; };
+		F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPTitleScene.cpp; path = ../Classes/MPTitleScene.cpp; sourceTree = "<group>"; };
+		F82987C31703B68F00EE6CF7 /* MPTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTitleScene.h; path = ../Classes/MPTitleScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,13 +186,17 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F835808C1701276E00322F69 /* HelloMapScene.cpp */,
-				F835808D1701276E00322F69 /* HelloMapScene.h */,
-				15A6969B1630E63B00D7A229 /* AppMacros.h */,
-				41CD6C7115BF76FB005E6F29 /* AppDelegate.cpp */,
-				41CD6C7215BF76FB005E6F29 /* AppDelegate.h */,
-				41CD6C7315BF76FB005E6F29 /* HelloWorldScene.cpp */,
-				41CD6C7415BF76FB005E6F29 /* HelloWorldScene.h */,
+				F82987B91703B68F00EE6CF7 /* MPApplication.cpp */,
+				F82987BA1703B68F00EE6CF7 /* MPApplication.h */,
+				F82987BB1703B68F00EE6CF7 /* MPAudioScene.cpp */,
+				F82987BC1703B68F00EE6CF7 /* MPAudioScene.h */,
+				F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */,
+				F82987BE1703B68F00EE6CF7 /* MPBox2DScene.h */,
+				F82987BF1703B68F00EE6CF7 /* MPMacros.h */,
+				F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */,
+				F82987C11703B68F00EE6CF7 /* MPMapScene.h */,
+				F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */,
+				F82987C31703B68F00EE6CF7 /* MPTitleScene.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -335,15 +345,17 @@
 			files = (
 				41CD6C6515BF7574005E6F29 /* AppController.mm in Sources */,
 				41CD6C6615BF7574005E6F29 /* main.m in Sources */,
-				41CD6C7515BF76FB005E6F29 /* AppDelegate.cpp in Sources */,
-				41CD6C7615BF76FB005E6F29 /* HelloWorldScene.cpp in Sources */,
 				31071B8316FD7A6B0088E628 /* CDAudioManager.m in Sources */,
 				31071B8416FD7A6B0088E628 /* CDOpenALSupport.m in Sources */,
 				31071B8516FD7A6B0088E628 /* CDXMacOSXSupport.mm in Sources */,
 				31071B8616FD7A6B0088E628 /* CocosDenshion.m in Sources */,
 				31071B8716FD7A6B0088E628 /* SimpleAudioEngine.mm in Sources */,
 				31071B8816FD7A6B0088E628 /* SimpleAudioEngine_objc.m in Sources */,
-				F835808E1701276E00322F69 /* HelloMapScene.cpp in Sources */,
+				F82987C41703B68F00EE6CF7 /* MPApplication.cpp in Sources */,
+				F82987C51703B68F00EE6CF7 /* MPAudioScene.cpp in Sources */,
+				F82987C61703B68F00EE6CF7 /* MPBox2DScene.cpp in Sources */,
+				F82987C71703B68F00EE6CF7 /* MPMapScene.cpp in Sources */,
+				F82987C81703B68F00EE6CF7 /* MPTitleScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

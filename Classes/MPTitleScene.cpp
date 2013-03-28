@@ -13,6 +13,10 @@ void MPTitleScene::selectBox2D(CCObject* pSender)
 void MPTitleScene::menuCloseCallback(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
+    exit(0);
+#endif
 }
 
 CCScene * MPTitleScene::create()
@@ -45,6 +49,7 @@ CCLayer *MPTitleScene::createLayer()
 	box2DItem->setPosition(ccp(
 		origin.x + visibleSize.width - box2DItem->getContentSize().width/2 - 300,
 		origin.y + box2DItem->getContentSize().height/2 + 300));
+    
 
 
 	// Close button

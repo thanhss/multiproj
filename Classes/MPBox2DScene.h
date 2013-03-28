@@ -9,7 +9,7 @@ class MPBox2DScene : public cocos2d::CCScene
 {
 public:
     static cocos2d::CCScene *create();
-    void menuCloseCallback(CCObject* pSender);
+    void titleCallback(CCObject* pSender);
     
 private:
 	static CCLayer * createLayer();

@@ -1,61 +1,60 @@
 #include "stdafx.h"
-#include "HelloMapScene.h"
-#include "HelloTitleScene.h"
-#include "AppMacros.h"
+#include "MPMapScene.h"
+#include "MPTitleScene.h"
+#include "MPMacros.h"
 
 USING_NS_CC;
 
-CCScene* HelloMapScene::scene()
+CCScene* MPMapScene::create()
 {
     CCScene *scene = CCScene::create();    
-    HelloMapScene *layer = HelloMapScene::create();
+    CCLayer *layer = createLayer();
     scene->addChild(layer);
     return scene;
 }
 
-bool HelloMapScene::init()
+CCLayer *MPMapScene::createLayer()
 {
-    if ( !CCLayer::init() )
-    {
-        return false;
-    }
-    
+    CCLayer *layer = CCLayer::create();
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
 	// Exit button
 
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+    CCMenuItemImage *backItem = CCMenuItemImage::create(
                                         "CloseNormal.png",
                                         "CloseSelected.png",
-                                        this,
-                                        menu_selector(HelloMapScene::menuCloseCallback));
+                                        layer,
+                                        menu_selector(MPMapScene::titleCallback));
     
-	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
-                                origin.y + pCloseItem->getContentSize().height/2));
+	backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2 ,
+                                origin.y + backItem->getContentSize().height/2));
 
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, 1);
+    CCMenu* menu = CCMenu::create(backItem, NULL);
+    menu->setPosition(CCPointZero);
+    layer->addChild(menu, 1);
     
 	// Screen Title
 
-    CCLabelTTF* pLabel = CCLabelTTF::create("A Map Scene", "Arial", TITLE_FONT_SIZE);    
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
-    this->addChild(pLabel, 1);
+    CCLabelTTF* label = CCLabelTTF::create("A Map Scene", "Arial", TITLE_FONT_SIZE);
+    label->setPosition(ccp(origin.x + visibleSize.width/2,
+                            origin.y + visibleSize.height - label->getContentSize().height));
+    layer->addChild(label, 1);
 
 	// Tile Map
 
-//	CCTMXTiledMap *map = CCTMXTiledMap::create("hello_map/desert.tmx");
+//	CCTMXTiledMap *map = CCTMXTiledMap::create("MP_map/desert.tmx");
 	CCTMXTiledMap *map = CCTMXTiledMap::create("ninja_map/TileMap.tmx");
-    addChild(map, 0);
+    layer->addChild(map, 0);
     
-    return true;
+    return layer;
 }
 
 
-void HelloMapScene::menuCloseCallback(CCObject* pSender)
+void MPMapScene::titleCallback(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(HelloTitleScene::scene());
+	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
+    CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+#endif
 }

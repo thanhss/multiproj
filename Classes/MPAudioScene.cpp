@@ -1,20 +1,24 @@
 #include "stdafx.h"
-#include "HelloAudioScene.h"
-#include "HelloTitleScene.h"
-#include "AppMacros.h"
+#include "MPAudioScene.h"
+#include "MPTitleScene.h"
+#include "MPMacros.h"
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
 using namespace CocosDenshion;
 
-CCScene* HelloAudioScene::scene()
+bool MPAudioScene::paused = false;
+
+CCSprite *MPAudioScene::player = NULL;
+
+CCScene* MPAudioScene::create()
 {
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
     // 'layer' is an autorelease object
-    HelloAudioScene *layer = HelloAudioScene::create();
+    CCLayer *layer = createLayer();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -24,14 +28,9 @@ CCScene* HelloAudioScene::scene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloAudioScene::init()
+CCLayer *MPAudioScene::createLayer()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !CCLayer::init() )
-    {
-        return false;
-    }
+    CCLayer *layer = CCLayer::create();
     
     paused = false;
     
@@ -39,42 +38,32 @@ bool HelloAudioScene::init()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 	
 	//enable touch on screen
-	this->setTouchEnabled(true);
+	layer->setTouchEnabled(true);
 	//this->setTouchMode(cocos2d::ccTouchesMode::kCCTouchesOneByOne);
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+    CCMenuItemImage *backItem = CCMenuItemImage::create(
                                         "CloseNormal.png",
                                         "CloseSelected.png",
-                                        this,
-                                        menu_selector(HelloAudioScene::menuCloseCallback));
+                                        layer,
+                                        menu_selector(MPAudioScene::titleCallback));
     
-	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
-                                origin.y + pCloseItem->getContentSize().height/2));
+	backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2 ,
+                                origin.y + backItem->getContentSize().height/2));
 
     // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, 1);
+    CCMenu* menu = CCMenu::create(backItem, NULL);
+    menu->setPosition(CCPointZero);
+    layer->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
+    //Scene Title
     
-    CCLabelTTF* pLabel = CCLabelTTF::create("Audio Scene", "Arial", TITLE_FONT_SIZE);
+    CCLabelTTF* label = CCLabelTTF::create("Audio Scene", "Arial", TITLE_FONT_SIZE);
     
-    // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
+    label->setPosition(ccp(origin.x + visibleSize.width/2,
+                            origin.y + visibleSize.height - label->getContentSize().height));
 
     // add the label as a child to this layer
-    this->addChild(pLabel, 1);
+    layer->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
     CCSprite* pSprite = CCSprite::create("HelloWorld.png");
@@ -83,24 +72,24 @@ bool HelloAudioScene::init()
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    layer->addChild(pSprite, 0);
 
 	player = CCSprite::create("dragon_sign.png");
 	
 	//player->setContentSize(CCSizeMake(player->getContentSize().width*3, player->getContentSize().height*3));
-	player->setPosition(ccp(visibleSize.width/3, visibleSize.height/3));
+	player ->setPosition(ccp(visibleSize.width/3, visibleSize.height/3));
 
-	this->addChild(player, 1);
+	layer->addChild(player, 1);
 
 	SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic("background.mp3");
     SimpleAudioEngine::sharedEngine()->setBackgroundMusicVolume(0.5);
     SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background.mp3", true);
 
     
-    return true;
+    return layer;
 }
 
-void HelloAudioScene::menuCloseCallback(CCObject* pSender)
+void MPAudioScene::titleCallback(CCObject* pSender)
 {
     CCDirector::sharedDirector()->end();
 
@@ -109,7 +98,7 @@ void HelloAudioScene::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
-void HelloAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
+void MPAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 {
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();

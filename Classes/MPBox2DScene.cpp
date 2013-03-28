@@ -24,7 +24,7 @@ CCLayer *MPBox2DScene::createLayer()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         layer,
-                                        menu_selector(MPBox2DScene::menuCloseCallback));
+                                        menu_selector(MPBox2DScene::titleCallback));
     
 	backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2 ,
                                origin.y + backItem->getContentSize().height/2));
@@ -41,7 +41,10 @@ CCLayer *MPBox2DScene::createLayer()
     return layer;
 }
 
-void MPBox2DScene::menuCloseCallback(CCObject* pSender)
+void MPBox2DScene::titleCallback(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
+    CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+#endif
 }

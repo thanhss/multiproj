@@ -23,9 +23,9 @@
  ****************************************************************************/
  
 #import "AppController.h"
-#import "AppDelegate.h"
+#import "MPApplication.h"
 
-static AppDelegate s_sharedApplication;
+static MPApplication s_sharedApplication;
 
 @implementation AppController
 
