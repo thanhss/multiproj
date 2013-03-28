@@ -22,7 +22,6 @@ CCScene* MPAudioScene::create()
 
     // add layer as a child to scene
     scene->addChild(layer);
-
     // return the scene
     return scene;
 }
@@ -38,7 +37,7 @@ CCLayer *MPAudioScene::createLayer()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 	
 	//enable touch on screen
-	layer->setTouchEnabled(true);
+    //layer->setTouchEnabled(true);
 	//this->setTouchMode(cocos2d::ccTouchesMode::kCCTouchesOneByOne);
 
     CCMenuItemImage *backItem = CCMenuItemImage::create(
@@ -91,14 +90,12 @@ CCLayer *MPAudioScene::createLayer()
 
 void MPAudioScene::titleCallback(CCObject* pSender)
 {
-    CCDirector::sharedDirector()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
-    exit(0);
-#endif
+    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+    paused = true;
+    CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
 }
 
-void MPAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
+/*void MPAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 {
 	CCTouch* touch = (CCTouch*) (pTouches->anyObject());
 	CCPoint location = touch->getLocation();
@@ -116,4 +113,4 @@ void MPAudioScene::ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent)
 	//move player to touch point
 	player->setPosition(location);
 	
-}
+}*/
