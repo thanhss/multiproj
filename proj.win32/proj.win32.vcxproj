@@ -53,14 +53,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;$(ProjectDir)..\..\cocos2d-x\CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;$(ProjectDir)..\..\cocos2d-x\external;$(ProjectDir)..\..\cocos2d-x\CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;libcocos2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;libcocos2d.lib;libBox2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -90,10 +90,12 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\MPApplication.h" />
     <ClInclude Include="..\Classes\MPAudioScene.h" />
+    <ClInclude Include="..\Classes\MPBox2DLayer.h" />
     <ClInclude Include="..\Classes\MPBox2DScene.h" />
     <ClInclude Include="..\Classes\MPMacros.h" />
     <ClInclude Include="..\Classes\MPMapScene.h" />
     <ClInclude Include="..\Classes\MPTitleScene.h" />
+    <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -102,9 +104,11 @@
   <ItemGroup>
     <ClCompile Include="..\Classes\MPApplication.cpp" />
     <ClCompile Include="..\Classes\MPAudioScene.cpp" />
+    <ClCompile Include="..\Classes\MPBox2DLayer.cpp" />
     <ClCompile Include="..\Classes\MPBox2DScene.cpp" />
     <ClCompile Include="..\Classes\MPMapScene.cpp" />
     <ClCompile Include="..\Classes\MPTitleScene.cpp" />
+    <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

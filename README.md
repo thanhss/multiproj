@@ -38,9 +38,10 @@ Do the following.
 
 ## Under Visual Studio 2010 (Express or Professional)
 
-I don't remember what to do, but I beleive you need to configure the working directory,
-which you do in the project properties, under Debug.  Set the working directory
-to the Resources folder.
+- Open the solution file under .... in Viual Studio 2010 Express (or Professional).
+- Right click the proj.win32 project and select Set as Startup Project.
+_ Click the green icon to build and run the the startup project (set to proj.win32 in the previous step). 
+
 
 ## Project Creation Notes
 
@@ -51,4 +52,9 @@ Set the search path for include files to the following.
 
     "$(SDKROOT)/usr/include/libxml2/" "$(SRCROOT)/../../cocos2d-x/cocos2dx/include" "$(SRCROOT)/../../cocos2d-x/cocos2dx" "$(SRCROOT)/../../cocos2d-x/cocos2dx/platform/mac" "$(SRCROOT)/../../cocos2d-x/cocos2dx/kazmath/include"
 
+## The Tiled Map Editor
+
+The project depends on the map editor called Tiled.  
+You will need to install the Tiled editor to create and modify maps.
+We will be useing the Qt-version of Tiled, so install that.
 
