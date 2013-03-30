@@ -92,6 +92,8 @@
     <ClInclude Include="..\Classes\MPAudioScene.h" />
     <ClInclude Include="..\Classes\MPBox2DLayer.h" />
     <ClInclude Include="..\Classes\MPBox2DScene.h" />
+    <ClInclude Include="..\Classes\MPGuiTestLayer.h" />
+    <ClInclude Include="..\Classes\MPGuiTestScene.h" />
     <ClInclude Include="..\Classes\MPMacros.h" />
     <ClInclude Include="..\Classes\MPMapScene.h" />
     <ClInclude Include="..\Classes\MPTitleScene.h" />
@@ -106,6 +108,8 @@
     <ClCompile Include="..\Classes\MPAudioScene.cpp" />
     <ClCompile Include="..\Classes\MPBox2DLayer.cpp" />
     <ClCompile Include="..\Classes\MPBox2DScene.cpp" />
+    <ClCompile Include="..\Classes\MPGuiTestLayer.cpp" />
+    <ClCompile Include="..\Classes\MPGuiTestScene.cpp" />
     <ClCompile Include="..\Classes\MPMapScene.cpp" />
     <ClCompile Include="..\Classes\MPTitleScene.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />

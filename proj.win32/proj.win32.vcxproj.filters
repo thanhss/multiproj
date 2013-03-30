@@ -62,6 +62,12 @@
     <ClInclude Include="..\Classes\VisibleRect.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\MPGuiTestLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MPGuiTestScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -89,6 +95,12 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MPGuiTestLayer.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MPGuiTestScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>

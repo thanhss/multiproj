@@ -11,6 +11,7 @@ public:
     static cocos2d::CCScene * create();
     void menuCloseCallback(CCObject* pSender);
     void selectBox2D(CCObject* pSender);
+    void selectGuiTest(CCObject* pSender);
     void selectAudio(CCObject* pSender);
     void selectMap(CCObject* pSender);
 
