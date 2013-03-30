@@ -16,6 +16,9 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{9b9dde17-f2a9-4902-bee0-ca43ce95faed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="physics_nodes">
+      <UniqueIdentifier>{3e13a7ec-98ba-4cf2-9340-35d4d18011ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="large.ico">
@@ -68,6 +71,12 @@
     <ClInclude Include="..\Classes\MPGuiTestScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\physics_nodes\CCPhysicsDebugNode.h">
+      <Filter>physics_nodes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\physics_nodes\CCPhysicsSprite.h">
+      <Filter>physics_nodes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -102,6 +111,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\MPGuiTestScene.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics_nodes\CCPhysicsDebugNode.cpp">
+      <Filter>physics_nodes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\physics_nodes\CCPhysicsSprite.cpp">
+      <Filter>physics_nodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

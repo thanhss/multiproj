@@ -52,9 +52,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;$(ProjectDir)..\..\cocos2d-x\external;$(ProjectDir)..\..\cocos2d-x\CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_ENABLE_BOX2D_INTEGRATION=1;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(ProjectDir)..\..\cocos2d-x\cocos2dx;$(ProjectDir)..\..\cocos2d-x\cocos2dx\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\kazmath\include;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\win32;$(ProjectDir)..\..\cocos2d-x\cocos2dx\platform\third_party\win32\OGLES;..\Classes;$(ProjectDir)..\..\cocos2d-x\extensions;$(ProjectDir)..\..\cocos2d-x\external;$(ProjectDir)..\..\cocos2d-x\CocosDenshion\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4267;4251;4244</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>CC_ENABLE_CHIPMUNK_INTEGRATION;%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -97,6 +98,8 @@
     <ClInclude Include="..\Classes\MPMacros.h" />
     <ClInclude Include="..\Classes\MPMapScene.h" />
     <ClInclude Include="..\Classes\MPTitleScene.h" />
+    <ClInclude Include="..\Classes\physics_nodes\CCPhysicsDebugNode.h" />
+    <ClInclude Include="..\Classes\physics_nodes\CCPhysicsSprite.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Resource.h" />
@@ -112,6 +115,8 @@
     <ClCompile Include="..\Classes\MPGuiTestScene.cpp" />
     <ClCompile Include="..\Classes\MPMapScene.cpp" />
     <ClCompile Include="..\Classes\MPTitleScene.cpp" />
+    <ClCompile Include="..\Classes\physics_nodes\CCPhysicsDebugNode.cpp" />
+    <ClCompile Include="..\Classes\physics_nodes\CCPhysicsSprite.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stdafx.cpp">

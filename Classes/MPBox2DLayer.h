@@ -18,10 +18,14 @@ public:
     void titleCallback(CCObject* pSender);
     
 private:
-	CCTexture2D* m_pSpriteTexture;    // weak ref
-    b2World* world;
+	CCTexture2D * spriteTexture;    // weak ref
+    b2World * world;
 
 	void initPhysics();
+	void addNewSpriteAtPosition(CCPoint p);
+    void update(float dt);
+    virtual void ccTouchesEnded(CCSet* touches, CCEvent* event);
+
 };
 
 #endif
