@@ -7,12 +7,9 @@ USING_NS_CC;
 
 #define PTM_RATIO 32
 
-MPGuiTestLayer::~MPGuiTestLayer()
-{
-}
+MPGuiTestLayer::~MPGuiTestLayer() {}
 
-bool MPGuiTestLayer::init()
-{    
+bool MPGuiTestLayer::init() {
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
@@ -37,11 +34,9 @@ bool MPGuiTestLayer::init()
     return true;
 }
 
-void MPGuiTestLayer::titleCallback(CCObject* pSender)
-{
+void MPGuiTestLayer::titleCallback(CCObject* pSender) {
 	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
     CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
 #endif
 }
-

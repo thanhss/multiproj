@@ -8,8 +8,7 @@
 
 The reason for implement as private inheritance is to hide some interface call by CCDirector.
 */
-class  MPApplication : private cocos2d::CCApplication
-{
+class  MPApplication : private cocos2d::CCApplication {
 public:
     MPApplication();
     virtual ~MPApplication();
@@ -35,4 +34,3 @@ public:
 };
 
 #endif
-

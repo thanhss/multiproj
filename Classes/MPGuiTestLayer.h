@@ -6,8 +6,7 @@
 
 USING_NS_CC;
 
-class MPGuiTestLayer : public cocos2d::CCLayer
-{
+class MPGuiTestLayer : public cocos2d::CCLayer {
 public:
 	CREATE_FUNC(MPGuiTestLayer);
 
@@ -18,11 +17,10 @@ public:
     void titleCallback(CCObject* pSender);
     
 private:
-	CCTexture2D* m_pSpriteTexture;    // weak ref
+	CCTexture2D* m_pSpriteTexture; // weak ref
     b2World* world;
 
 	void initPhysics();
 };
 
 #endif
-

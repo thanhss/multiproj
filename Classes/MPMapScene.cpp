@@ -5,8 +5,7 @@
 
 USING_NS_CC;
 
-CCScene* MPMapScene::create()
-{
+CCScene* MPMapScene::create() {
     CCScene *scene = CCScene::create();    
     CCLayer *layer = MPMapLayer::create();
     scene->addChild(layer);

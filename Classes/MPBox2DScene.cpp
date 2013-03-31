@@ -6,8 +6,7 @@
 
 USING_NS_CC;
 
-CCScene *MPBox2DScene::create()
-{
+CCScene *MPBox2DScene::create() {
     CCScene *scene = CCScene::create();    
 	CCLayer * layer = MPBox2DLayer::create();
     scene->addChild(layer);

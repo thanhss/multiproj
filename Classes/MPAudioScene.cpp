@@ -5,12 +5,9 @@
 
 USING_NS_CC;
 
-
-CCScene* MPAudioScene::create()
-{
+CCScene* MPAudioScene::create() {
     CCScene *scene = CCScene::create();
     CCLayer *layer = MPAudioLayer::create();
     scene->addChild(layer);
     return scene;
 }
-

@@ -5,13 +5,9 @@
 
 USING_NS_CC;
 
-class MPAudioScene : public cocos2d::CCScene
-{
+class MPAudioScene : public cocos2d::CCScene {
 public:
     static cocos2d::CCScene* create();
-
 };
-
-
 
 #endif 

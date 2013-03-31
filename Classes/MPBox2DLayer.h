@@ -6,8 +6,7 @@
 
 USING_NS_CC;
 
-class MPBox2DLayer : public cocos2d::CCLayer
-{
+class MPBox2DLayer : public cocos2d::CCLayer {
 public:
 	CREATE_FUNC(MPBox2DLayer);
 
@@ -18,7 +17,7 @@ public:
     void titleCallback(CCObject* pSender);
     
 private:
-	CCTexture2D * spriteTexture;    // weak ref
+	CCTexture2D * spriteTexture; // weak ref
     b2World * world;
 
 	void initPhysics();
@@ -29,4 +28,3 @@ private:
 };
 
 #endif
-

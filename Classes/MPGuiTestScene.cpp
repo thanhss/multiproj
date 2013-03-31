@@ -6,8 +6,7 @@
 
 USING_NS_CC;
 
-CCScene *MPGuiTestScene::create()
-{
+CCScene *MPGuiTestScene::create() {
     CCScene *scene = CCScene::create();    
 	CCLayer * layer = MPGuiTestLayer::create();
     scene->addChild(layer);

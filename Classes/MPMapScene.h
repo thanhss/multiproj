@@ -5,12 +5,10 @@
 
 USING_NS_CC;
 
-class MPMapScene : public cocos2d::CCScene
-{
+class MPMapScene : public cocos2d::CCScene {
 public:
     static cocos2d::CCScene* create();
     
 };
 
 #endif
-

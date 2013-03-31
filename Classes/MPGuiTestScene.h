@@ -5,12 +5,9 @@
 
 USING_NS_CC;
 
-class MPGuiTestScene : public cocos2d::CCScene
-{
+class MPGuiTestScene : public cocos2d::CCScene {
 public:
     static cocos2d::CCScene *create();
-
 };
 
 #endif
-

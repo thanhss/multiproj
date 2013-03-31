@@ -5,11 +5,9 @@
 
 USING_NS_CC;
 
-class MPTitleScene : public cocos2d::CCScene
-{
+class MPTitleScene : public cocos2d::CCScene {
 public:
     static cocos2d::CCScene * create();
 };
 
 #endif
-

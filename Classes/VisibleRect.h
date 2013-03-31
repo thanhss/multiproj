@@ -4,8 +4,7 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-class VisibleRect
-{
+class VisibleRect {
 public:
     static CCRect getVisibleRect();
 

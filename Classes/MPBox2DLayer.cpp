@@ -5,7 +5,6 @@
 #include "Box2D/Box2D.h"
 #include "VisibleRect.h"
 //#include "cocos-ext.h"
-
 #include "physics_nodes/CCPhysicsSprite.h"
 
 USING_NS_CC_EXT;
@@ -16,13 +15,11 @@ enum {
     parentNodeTag = 1,
 };
 
-MPBox2DLayer::~MPBox2DLayer()
-{
+MPBox2DLayer::~MPBox2DLayer() {
     CC_SAFE_DELETE(world);
 }
 
-bool MPBox2DLayer::init()
-{    
+bool MPBox2DLayer::init() {
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
@@ -30,18 +27,16 @@ bool MPBox2DLayer::init()
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(MPBox2DLayer::titleCallback));
+                                        menu_selector(MPBox2DLayer::titleCallback);
     
-	backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2 ,
-                               origin.y + backItem->getContentSize().height/2));
+    backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2, origin.y + backItem->getContentSize().height/2));
 
     CCMenu* menu = CCMenu::create(backItem, NULL);
     menu->setPosition(CCPointZero);
     addChild(menu, 1);
     
-    CCLabelTTF* titleLabel = CCLabelTTF::create("Box 2D Scene", "Arial", TITLE_FONT_SIZE);    
-    titleLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - titleLabel->getContentSize().height));
+    CCLabelTTF* titleLabel = CCLabelTTF::create("Box 2D Scene", "Arial",TITLE_FONT_SIZE);
+    titleLabel->setPosition(ccp(origin.x + visibleSize.width/2, origin.y + visibleSize.height - titleLabel->getContentSize().height));
     addChild(titleLabel, 1);
 
 	CCLabelTTF * label = CCLabelTTF::create("Tap screen", "Marker Felt", 32);
@@ -66,13 +61,11 @@ bool MPBox2DLayer::init()
     return true;
 }
 
-void MPBox2DLayer::titleCallback(CCObject* pSender)
-{
+void MPBox2DLayer::titleCallback(CCObject* pSender) {
 	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
 }
 
-void MPBox2DLayer::initPhysics()
-{
+void MPBox2DLayer::initPhysics() {
     b2Vec2 gravity;
     gravity.Set(0.0f, -10.0f);
     world = new b2World(gravity);
@@ -82,17 +75,16 @@ void MPBox2DLayer::initPhysics()
 
     world->SetContinuousPhysics(true);
 
-//     m_debugDraw = new GLESDebugDraw( PTM_RATIO );
-//     world->SetDebugDraw(m_debugDraw);
+    // m_debugDraw = new GLESDebugDraw( PTM_RATIO );
+    // world->SetDebugDraw(m_debugDraw);
 
     uint32 flags = 0;
     flags += b2Draw::e_shapeBit;
-    //        flags += b2Draw::e_jointBit;
-    //        flags += b2Draw::e_aabbBit;
-    //        flags += b2Draw::e_pairBit;
-    //        flags += b2Draw::e_centerOfMassBit;
-    //m_debugDraw->SetFlags(flags);
-
+    // flags += b2Draw::e_jointBit;
+    // flags += b2Draw::e_aabbBit;
+    // flags += b2Draw::e_pairBit;
+    // flags += b2Draw::e_centerOfMassBit;
+    // m_debugDraw->SetFlags(flags);
 
     // Define the ground body.
     b2BodyDef groundBodyDef;
@@ -123,8 +115,7 @@ void MPBox2DLayer::initPhysics()
     groundBody->CreateFixture(&groundBox,0);
 }
 
-void MPBox2DLayer::addNewSpriteAtPosition(CCPoint p)
-{
+void MPBox2DLayer::addNewSpriteAtPosition(CCPoint p) {
     CCLOG("Add sprite %0.2f x %02.f",p.x,p.y);
     
     // Define the dynamic body.
@@ -137,7 +128,7 @@ void MPBox2DLayer::addNewSpriteAtPosition(CCPoint p)
     
     // Define another box shape for our dynamic body.
     b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
+    dynamicBox.SetAsBox(.5f, .5f); //These are mid points for our 1m box
     
     // Define the dynamic body fixture.
     b2FixtureDef fixtureDef;
@@ -148,8 +139,8 @@ void MPBox2DLayer::addNewSpriteAtPosition(CCPoint p)
     
     CCNode * parent = this->getChildByTag(parentNodeTag);
     
-    //We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
-    //just randomly picking one of the images
+    // We have a 64x64 sprite sheet with 4 different 32x32 images.  The following code is
+    // just randomly picking one of the images
     int idx = (CCRANDOM_0_1() > .5 ? 0:1);
     int idy = (CCRANDOM_0_1() > .5 ? 0:1);
     CCPhysicsSprite *sprite = CCPhysicsSprite::createWithTexture(spriteTexture,CCRectMake(32 * idx, 32 * idy, 32, 32));
@@ -160,12 +151,11 @@ void MPBox2DLayer::addNewSpriteAtPosition(CCPoint p)
 }
 
 
-void MPBox2DLayer::update(float dt)
-{
-    //It is recommended that a fixed time step is used with Box2D for stability
-    //of the simulation, however, we are using a variable time step here.
-    //You need to make an informed choice, the following URL is useful
-    //http://gafferongames.com/game-physics/fix-your-timestep/
+void MPBox2DLayer::update(float dt) {
+    // It is recommended that a fixed time step is used with Box2D for stability
+    // of the simulation, however, we are using a variable time step here.
+    // You need to make an informed choice, the following URL is useful
+    // http://gafferongames.com/game-physics/fix-your-timestep/
     
     int velocityIterations = 8;
     int positionIterations = 1;
@@ -175,18 +165,17 @@ void MPBox2DLayer::update(float dt)
     world->Step(dt, velocityIterations, positionIterations);
 }
 
-void MPBox2DLayer::ccTouchesEnded(CCSet* touches, CCEvent* event)
-{
-    //Add a new body/atlas sprite at the touched location
+void MPBox2DLayer::ccTouchesEnded(CCSet* touches, CCEvent* event) {
+    // Add a new body/atlas sprite at the touched location
     CCSetIterator it;
     CCTouch* touch;
 
-    for( it = touches->begin(); it != touches->end(); it++) 
-    {
+    for( it = touches->begin(); it != touches->end(); it++) {
         touch = (CCTouch*)(*it);
 
-        if(!touch)
-            break;
+        if(!touch) {
+		    break;
+		}
 
         CCPoint location = touch->getLocation();
     
