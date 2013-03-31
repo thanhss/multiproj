@@ -88,6 +88,9 @@
 		F82987C61703B68F00EE6CF7 /* MPBox2DScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */; };
 		F82987C71703B68F00EE6CF7 /* MPMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */; };
 		F82987C81703B68F00EE6CF7 /* MPTitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */; };
+		F8519E941708DDD000DB806E /* MPAudioLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E931708DDD000DB806E /* MPAudioLayer.cpp */; };
+		F8519E971708E4E500DB806E /* MPMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E961708E4E500DB806E /* MPMapLayer.cpp */; };
+		F8519E991708E84200DB806E /* MPTitleLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E981708E84100DB806E /* MPTitleLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,6 +256,12 @@
 		F82987C11703B68F00EE6CF7 /* MPMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMapScene.h; path = ../Classes/MPMapScene.h; sourceTree = "<group>"; };
 		F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPTitleScene.cpp; path = ../Classes/MPTitleScene.cpp; sourceTree = "<group>"; };
 		F82987C31703B68F00EE6CF7 /* MPTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTitleScene.h; path = ../Classes/MPTitleScene.h; sourceTree = "<group>"; };
+		F8519E791708DBE200DB806E /* MPAudioLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioLayer.h; sourceTree = "<group>"; };
+		F8519E7B1708DBFB00DB806E /* MPMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMapLayer.h; sourceTree = "<group>"; };
+		F8519E931708DDD000DB806E /* MPAudioLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPAudioLayer.cpp; sourceTree = "<group>"; };
+		F8519E951708E3A100DB806E /* MPTitleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTitleLayer.h; sourceTree = "<group>"; };
+		F8519E961708E4E500DB806E /* MPMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPMapLayer.cpp; sourceTree = "<group>"; };
+		F8519E981708E84100DB806E /* MPTitleLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPTitleLayer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -523,13 +532,19 @@
 				F82987BA1703B68F00EE6CF7 /* MPApplication.h */,
 				F82987BB1703B68F00EE6CF7 /* MPAudioScene.cpp */,
 				F82987BC1703B68F00EE6CF7 /* MPAudioScene.h */,
+				F8519E931708DDD000DB806E /* MPAudioLayer.cpp */,
+				F8519E791708DBE200DB806E /* MPAudioLayer.h */,
 				F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */,
 				F82987BE1703B68F00EE6CF7 /* MPBox2DScene.h */,
 				F82987BF1703B68F00EE6CF7 /* MPMacros.h */,
 				F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */,
 				F82987C11703B68F00EE6CF7 /* MPMapScene.h */,
+				F8519E961708E4E500DB806E /* MPMapLayer.cpp */,
+				F8519E7B1708DBFB00DB806E /* MPMapLayer.h */,
 				F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */,
 				F82987C31703B68F00EE6CF7 /* MPTitleScene.h */,
+				F8519E981708E84100DB806E /* MPTitleLayer.cpp */,
+				F8519E951708E3A100DB806E /* MPTitleLayer.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -740,6 +755,9 @@
 				310EE16117068EB800FB111F /* b2Rope.cpp in Sources */,
 				31F1A3A117075BCB00CA82D0 /* CCPhysicsDebugNode.cpp in Sources */,
 				31F1A3A217075BCB00CA82D0 /* CCPhysicsSprite.cpp in Sources */,
+				F8519E941708DDD000DB806E /* MPAudioLayer.cpp in Sources */,
+				F8519E971708E4E500DB806E /* MPMapLayer.cpp in Sources */,
+				F8519E991708E84200DB806E /* MPTitleLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

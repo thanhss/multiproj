@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "MPBox2DScene.h"
 #include "MPBox2DLayer.h"
-#include "MPTitleScene.h"
 #include "MPMacros.h"
 #include "Box2D/Box2D.h"
 
