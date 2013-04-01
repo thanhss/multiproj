@@ -1,7 +1,6 @@
-//
-// Prefix header for all source files of the 'Paralaxer' target in the 'Paralaxer' project
-//
-
 #ifdef __OBJC__
-	#import <Cocoa/Cocoa.h>
+
+   #import <Cocoa/Cocoa.h>
+   #import "stdafx.h"
+
 #endif
