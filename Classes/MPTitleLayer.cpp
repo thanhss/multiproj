@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Bullets in a Burning Box, Inc. All rights reserved.
 //
 
+#include "stdafx.h"
 #include "MPTitleLayer.h"
 #include "MPMapScene.h"
 #include "MPBox2DScene.h"

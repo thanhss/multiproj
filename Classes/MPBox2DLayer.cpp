@@ -27,7 +27,7 @@ bool MPBox2DLayer::init() {
                                         "CloseNormal.png",
                                         "CloseSelected.png",
                                         this,
-                                        menu_selector(MPBox2DLayer::titleCallback);
+                                        menu_selector(MPBox2DLayer::titleCallback));
     
     backItem->setPosition(ccp(origin.x + visibleSize.width - backItem->getContentSize().width/2, origin.y + backItem->getContentSize().height/2));
 

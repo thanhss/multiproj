@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "MPTitleScene.h"
 #include "MPMacros.h"
 #include "MPAudioLayer.h"
