@@ -10,6 +10,9 @@
 		1514DA3F163004980095A81C /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 1514DA3C163004980095A81C /* ipad */; };
 		1514DA40163004980095A81C /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 1514DA3D163004980095A81C /* ipadhd */; };
 		1514DA41163004980095A81C /* iphone in Resources */ = {isa = PBXBuildFile; fileRef = 1514DA3E163004980095A81C /* iphone */; };
+		310165EB17092842006235AB /* MPAudioLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310165E517092842006235AB /* MPAudioLayer.cpp */; };
+		310165EC17092842006235AB /* MPMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310165E717092842006235AB /* MPMapLayer.cpp */; };
+		310165ED17092842006235AB /* MPTitleLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310165E917092842006235AB /* MPTitleLayer.cpp */; };
 		31071B8316FD7A6B0088E628 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31071B7816FD7A6B0088E628 /* CDAudioManager.m */; };
 		31071B8416FD7A6B0088E628 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 31071B7B16FD7A6B0088E628 /* CDOpenALSupport.m */; };
 		31071B8516FD7A6B0088E628 /* CDXMacOSXSupport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31071B7D16FD7A6B0088E628 /* CDXMacOSXSupport.mm */; };
@@ -88,9 +91,6 @@
 		F82987C61703B68F00EE6CF7 /* MPBox2DScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */; };
 		F82987C71703B68F00EE6CF7 /* MPMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */; };
 		F82987C81703B68F00EE6CF7 /* MPTitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */; };
-		F8519E941708DDD000DB806E /* MPAudioLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E931708DDD000DB806E /* MPAudioLayer.cpp */; };
-		F8519E971708E4E500DB806E /* MPMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E961708E4E500DB806E /* MPMapLayer.cpp */; };
-		F8519E991708E84200DB806E /* MPTitleLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8519E981708E84100DB806E /* MPTitleLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +107,12 @@
 		1514DA3C163004980095A81C /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = ../Resources/ipad; sourceTree = "<group>"; };
 		1514DA3D163004980095A81C /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = ../Resources/ipadhd; sourceTree = "<group>"; };
 		1514DA3E163004980095A81C /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = ../Resources/iphone; sourceTree = "<group>"; };
+		310165E517092842006235AB /* MPAudioLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPAudioLayer.cpp; path = ../Classes/MPAudioLayer.cpp; sourceTree = "<group>"; };
+		310165E617092842006235AB /* MPAudioLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAudioLayer.h; path = ../Classes/MPAudioLayer.h; sourceTree = "<group>"; };
+		310165E717092842006235AB /* MPMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPMapLayer.cpp; path = ../Classes/MPMapLayer.cpp; sourceTree = "<group>"; };
+		310165E817092842006235AB /* MPMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMapLayer.h; path = ../Classes/MPMapLayer.h; sourceTree = "<group>"; };
+		310165E917092842006235AB /* MPTitleLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPTitleLayer.cpp; path = ../Classes/MPTitleLayer.cpp; sourceTree = "<group>"; };
+		310165EA17092842006235AB /* MPTitleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTitleLayer.h; path = ../Classes/MPTitleLayer.h; sourceTree = "<group>"; };
 		31071B7716FD7A6B0088E628 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
 		31071B7816FD7A6B0088E628 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
 		31071B7916FD7A6B0088E628 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
@@ -256,12 +262,6 @@
 		F82987C11703B68F00EE6CF7 /* MPMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMapScene.h; path = ../Classes/MPMapScene.h; sourceTree = "<group>"; };
 		F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPTitleScene.cpp; path = ../Classes/MPTitleScene.cpp; sourceTree = "<group>"; };
 		F82987C31703B68F00EE6CF7 /* MPTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTitleScene.h; path = ../Classes/MPTitleScene.h; sourceTree = "<group>"; };
-		F8519E791708DBE200DB806E /* MPAudioLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAudioLayer.h; sourceTree = "<group>"; };
-		F8519E7B1708DBFB00DB806E /* MPMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMapLayer.h; sourceTree = "<group>"; };
-		F8519E931708DDD000DB806E /* MPAudioLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPAudioLayer.cpp; sourceTree = "<group>"; };
-		F8519E951708E3A100DB806E /* MPTitleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTitleLayer.h; sourceTree = "<group>"; };
-		F8519E961708E4E500DB806E /* MPMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPMapLayer.cpp; sourceTree = "<group>"; };
-		F8519E981708E84100DB806E /* MPTitleLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MPTitleLayer.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -520,6 +520,12 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				310165E517092842006235AB /* MPAudioLayer.cpp */,
+				310165E617092842006235AB /* MPAudioLayer.h */,
+				310165E717092842006235AB /* MPMapLayer.cpp */,
+				310165E817092842006235AB /* MPMapLayer.h */,
+				310165E917092842006235AB /* MPTitleLayer.cpp */,
+				310165EA17092842006235AB /* MPTitleLayer.h */,
 				31F2FAFE17066CFD005A9793 /* VisibleRect.cpp */,
 				31F2FAFF17066CFD005A9793 /* VisibleRect.h */,
 				31F2FAF417066C74005A9793 /* MPBox2DLayer.cpp */,
@@ -532,19 +538,13 @@
 				F82987BA1703B68F00EE6CF7 /* MPApplication.h */,
 				F82987BB1703B68F00EE6CF7 /* MPAudioScene.cpp */,
 				F82987BC1703B68F00EE6CF7 /* MPAudioScene.h */,
-				F8519E931708DDD000DB806E /* MPAudioLayer.cpp */,
-				F8519E791708DBE200DB806E /* MPAudioLayer.h */,
 				F82987BD1703B68F00EE6CF7 /* MPBox2DScene.cpp */,
 				F82987BE1703B68F00EE6CF7 /* MPBox2DScene.h */,
 				F82987BF1703B68F00EE6CF7 /* MPMacros.h */,
 				F82987C01703B68F00EE6CF7 /* MPMapScene.cpp */,
 				F82987C11703B68F00EE6CF7 /* MPMapScene.h */,
-				F8519E961708E4E500DB806E /* MPMapLayer.cpp */,
-				F8519E7B1708DBFB00DB806E /* MPMapLayer.h */,
 				F82987C21703B68F00EE6CF7 /* MPTitleScene.cpp */,
 				F82987C31703B68F00EE6CF7 /* MPTitleScene.h */,
-				F8519E981708E84100DB806E /* MPTitleLayer.cpp */,
-				F8519E951708E3A100DB806E /* MPTitleLayer.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -755,9 +755,9 @@
 				310EE16117068EB800FB111F /* b2Rope.cpp in Sources */,
 				31F1A3A117075BCB00CA82D0 /* CCPhysicsDebugNode.cpp in Sources */,
 				31F1A3A217075BCB00CA82D0 /* CCPhysicsSprite.cpp in Sources */,
-				F8519E941708DDD000DB806E /* MPAudioLayer.cpp in Sources */,
-				F8519E971708E4E500DB806E /* MPMapLayer.cpp in Sources */,
-				F8519E991708E84200DB806E /* MPTitleLayer.cpp in Sources */,
+				310165EB17092842006235AB /* MPAudioLayer.cpp in Sources */,
+				310165EC17092842006235AB /* MPMapLayer.cpp in Sources */,
+				310165ED17092842006235AB /* MPTitleLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
