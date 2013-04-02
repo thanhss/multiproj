@@ -13,6 +13,9 @@ public:
 	virtual bool init();
     
     void titleCallback(CCObject* pSender);
+    
+private:
+    static void antiAliasMap(CCTMXTiledMap * map);
 };
 
 #endif

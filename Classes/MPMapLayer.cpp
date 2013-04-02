@@ -36,8 +36,55 @@ bool MPMapLayer::init(){
     //	CCTMXTiledMap *map = CCTMXTiledMap::create("MP_map/desert.tmx");
 	CCTMXTiledMap *map = CCTMXTiledMap::create("ninja_map/TileMap.tmx");
     this->addChild(map, 0);
+
+    MPMapLayer::antiAliasMap(map);
+        
+    map->setAnchorPoint(ccp(.5, .5));
+    map->setPosition(ccp(visibleSize.width * .5, visibleSize.height * .5));
+    map->setScale(.5);
+    map->setRotation(45);
     
+    CCTMXLayer* layer = map->layerNamed("Background");
+    assert(layer != NULL);
+
+    CCSprite *tile = layer->tileAt(ccp(5,6));
+    assert(tile != NULL);
+    
+    layer->removeTileAt(ccp(5, 6));
+    
+    CCActionInterval*  actionBy = CCMoveBy::create(2, ccp(visibleSize.width * .5, visibleSize.height * .5));
+    map->runAction(actionBy);
+    
+    CCActionInterval* action = CCScaleBy::create(2, 2);
+    map->runAction(action);
+
+    
+    
+/*
+    CCSize s = layer->getLayerSize();
+    for (int x = 2; x < s.width; x++) {
+        for (int y = 0; y < s.height; y++) {
+            layer->removeTileAt(ccp(x, y));
+        }
+    }
+*/
     return true;
+}
+
+void MPMapLayer::antiAliasMap(CCTMXTiledMap * map)
+{
+    CCArray * pChildrenArray = map->getChildren();
+    CCSpriteBatchNode* child = NULL;
+    CCObject* pObject = NULL;
+    CCARRAY_FOREACH(pChildrenArray, pObject)
+    {
+        child = (CCSpriteBatchNode*)pObject;
+        
+        if(!child)
+            break;
+        
+        child->getTexture()->setAntiAliasTexParameters();
+    }
 }
 
 void MPMapLayer::titleCallback(CCObject* pSender)
