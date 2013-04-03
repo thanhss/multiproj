@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MPBox2DLayer.h"
-#include "MPTitleScene.h"
+#include "MPScenes.h"
 #include "MPMacros.h"
 #include "Box2D/Box2D.h"
 #include "VisibleRect.h"
@@ -62,7 +62,7 @@ bool MPBox2DLayer::init() {
 }
 
 void MPBox2DLayer::titleCallback(CCObject* pSender) {
-	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 }
 
 void MPBox2DLayer::initPhysics() {

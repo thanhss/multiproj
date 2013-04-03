@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "MPTitleScene.h"
+#include "MPScenes.h"
 #include "MPMacros.h"
 #include "MPAudioLayer.h"
 #include "SimpleAudioEngine.h"
@@ -69,7 +69,7 @@ bool MPAudioLayer::init(){
 
 void MPAudioLayer::titleCallback(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
     SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
 }
 

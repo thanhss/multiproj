@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MPGuiTestLayer.h"
-#include "MPTitleScene.h"
+#include "MPScenes.h"
 #include "MPMacros.h"
 
 USING_NS_CC;
@@ -35,8 +35,8 @@ bool MPGuiTestLayer::init() {
 }
 
 void MPGuiTestLayer::titleCallback(CCObject* pSender) {
-	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC )
-    CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+    CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 #endif
 }

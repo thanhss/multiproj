@@ -8,10 +8,7 @@
 
 #include "stdafx.h"
 #include "MPTitleLayer.h"
-#include "MPMapScene.h"
-#include "MPBox2DScene.h"
-#include "MPAudioScene.h"
-#include "MPGuiTestScene.h"
+#include "MPScenes.h"
 #include "MPMacros.h"
 
 USING_NS_CC;
@@ -95,22 +92,22 @@ bool MPTitleLayer::init(){
 
 void MPTitleLayer::selectBox2D(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPBox2DScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createBox2DScene());
 }
 
 void MPTitleLayer::selectGuiTest(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPGuiTestScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createGUIScene());
 }
 
 void MPTitleLayer::selectAudio(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPAudioScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createAudioScene());
 }
 
 void MPTitleLayer::selectMap(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPMapScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createMapScene());
 }
 
 void MPTitleLayer::menuCloseCallback(CCObject* pSender)

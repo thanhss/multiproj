@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MPMapLayer.h"
-#include "MPTitleScene.h"
+#include "MPScenes.h"
 #include "MPMacros.h"
 
 USING_NS_CC;
@@ -89,5 +89,5 @@ void MPMapLayer::antiAliasMap(CCTMXTiledMap * map)
 
 void MPMapLayer::titleCallback(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->replaceScene(MPTitleScene::create());
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 }
