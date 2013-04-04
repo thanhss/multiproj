@@ -8,14 +8,13 @@ USING_NS_CC;
 class MPMapLayer : public cocos2d::CCLayer
 {
 public:
-	CREATE_FUNC(MPMapLayer);
-    
-	virtual bool init();
-    
-    void titleCallback(CCObject* pSender);
+    CREATE_FUNC(MPMapLayer);
+    virtual bool init();
     
 private:
     static void antiAliasMap(CCTMXTiledMap * map);
+    void titleCallback(CCObject * pSender);
+    CCSprite * player;
 };
 
 #endif

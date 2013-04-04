@@ -24,9 +24,15 @@ home directory (~).
 Start Xcode and load the multiproj project.  Try to build and run.
 In my case, the project would compile but not launch.  I needed to do the following.
 
+Check that Multiproj is the currently selected scheme.
+
+- Select Product ... Scheme ... Multiproj
+
+If that isn't enough, try the following.
+
 - Select Product ... Scheme ... Edit Scheme.
 - Select the Info tab.
-- Set the Executable to HelloCpp.app.
+- Set the Executable to Multiproj.app.
 
 Also, you need to set the working directory to the Resource folder.
 Do the following.
@@ -35,6 +41,7 @@ Do the following.
 - Select the Options tab.
 - Check the box to set a custom working directory.
 - Set the working directory to ``$(SRCROOT)/../Resources``.
+
 
 ## Under Visual Studio 2010 (Express or Professional)
 

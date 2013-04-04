@@ -34,7 +34,7 @@ bool MPMapLayer::init(){
 	// Tile Map
     
     //	CCTMXTiledMap *map = CCTMXTiledMap::create("MP_map/desert.tmx");
-	CCTMXTiledMap *map = CCTMXTiledMap::create("ninja_map/TileMap.tmx");
+	CCTMXTiledMap *map = CCTMXTiledMap::create("andrew_map/andrew_tilemap.tmx");
     this->addChild(map, 0);
 
     MPMapLayer::antiAliasMap(map);
@@ -42,11 +42,33 @@ bool MPMapLayer::init(){
     map->setAnchorPoint(ccp(.5, .5));
     map->setPosition(ccp(visibleSize.width * .5, visibleSize.height * .5));
     map->setScale(.5);
-    map->setRotation(45);
-    
+
+
     CCTMXLayer* layer = map->layerNamed("Background");
     assert(layer != NULL);
+	
+	CCTMXObjectGroup *objectGroup = map->objectGroupNamed("SpawnPointLayer");
+	assert(objectGroup != NULL);
+	CCSize mapSize = map->getContentSize();
+	float mapHeight = mapSize.height;
+	float mapWidth = mapSize.width;
+	
+	player = CCSprite::create("andrew_map/Player.png");
+	CCDictionary *spawnPoint = objectGroup->objectNamed("SpawnPoint");
+	
+	map->addChild(player,1);
+	
+	const CCString *positionX = spawnPoint->valueForKey("x");
+	const CCString *positionY = spawnPoint->valueForKey("y");
+	const CCString *objectName = spawnPoint->valueForKey("name");
+	
+	std::cout << positionX->getCString() << std::endl;
+	std::cout << mapHeight - positionY->intValue() % 32 << std::endl;
+	std::cout << objectName->getCString() << std::endl;
 
+//	player->setPosition(ccp(positionX,positionY));
+	
+/*
     CCSprite *tile = layer->tileAt(ccp(5,6));
     assert(tile != NULL);
     
@@ -57,7 +79,7 @@ bool MPMapLayer::init(){
     
     CCActionInterval* action = CCScaleBy::create(2, 2);
     map->runAction(action);
-
+*/
     
     
 /*
@@ -91,3 +113,4 @@ void MPMapLayer::titleCallback(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 }
+
