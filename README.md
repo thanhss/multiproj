@@ -38,8 +38,8 @@ Do the following.
 
 ## Under Visual Studio 2010 (Express or Professional)
 
-- Open the solution file under .... in Viual Studio 2010 Express (or Professional).
-- Right click the proj.win32 project and select Set as Startup Project.
+- Open the solution file under win32.vs2010 in Visual Studio 2010 Express (or Professional).
+- Right click the proj.win32 project and select _Set as Startup Project_.
 _ Click the green icon to build and run the the startup project (set to proj.win32 in the previous step). 
 
 

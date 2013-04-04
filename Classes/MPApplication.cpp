@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "MPApplication.h"
 #include "SimpleAudioEngine.h"
-#include "MPTitleScene.h"
 #include "MPMacros.h"
+#include "MPScenes.h"
 
 USING_NS_CC;
 using namespace std;
@@ -52,7 +52,7 @@ bool MPApplication::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
     // create a scene. it's an autorelease object
-    CCScene *pScene = MPTitleScene::create();
+    CCScene *pScene = MPScenes::createTitleScene();
     pDirector->runWithScene(pScene);
     return true;
 }

@@ -4,14 +4,14 @@
 #undef CC_ENABLE_CHIPMUNK_INTEGRATION
 #define CC_ENABLE_BOX2D_INTEGRATION 1
 
-//#include <tchar.h>
+#ifdef __cplusplus
 
-#include <vector>
-#include <string>
+   #include <vector>
+   #include <string>
 
-// Additional headers
+   #include "CCStdC.h"
+   #include "cocos2d.h"
 
-#include "CCStdC.h"
-#include "cocos2d.h"
+#endif
 
 #endif
