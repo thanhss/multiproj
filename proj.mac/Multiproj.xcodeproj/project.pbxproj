@@ -66,6 +66,8 @@
 		310EE16117068EB800FB111F /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE15F17068EB800FB111F /* b2Rope.cpp */; };
 		311A3DF716EEF571005456B4 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D853BD16EED32300F4569B /* libcocos2dx.a */; };
 		31EFD538170E4F5B00F02C42 /* MPKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFD536170E4F5B00F02C42 /* MPKeyboard.cpp */; };
+		31EFFB6F170E97BF0070399D /* MPLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFFB6B170E97BE0070399D /* MPLayer.cpp */; };
+		31EFFB70170E97BF0070399D /* MPTurnerMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFFB6D170E97BF0070399D /* MPTurnerMapLayer.cpp */; };
 		31F1A3A117075BCB00CA82D0 /* CCPhysicsDebugNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31F1A39D17075BCB00CA82D0 /* CCPhysicsDebugNode.cpp */; };
 		31F1A3A217075BCB00CA82D0 /* CCPhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31F1A39F17075BCB00CA82D0 /* CCPhysicsSprite.cpp */; };
 		31F2FAFA17066C74005A9793 /* MPBox2DLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31F2FAF417066C74005A9793 /* MPBox2DLayer.cpp */; };
@@ -219,6 +221,10 @@
 		31D853BE16EEF26F00F4569B /* stdafx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		31EFD536170E4F5B00F02C42 /* MPKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPKeyboard.cpp; path = ../Classes/MPKeyboard.cpp; sourceTree = "<group>"; };
 		31EFD537170E4F5B00F02C42 /* MPKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPKeyboard.h; path = ../Classes/MPKeyboard.h; sourceTree = "<group>"; };
+		31EFFB6B170E97BE0070399D /* MPLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPLayer.cpp; path = ../Classes/MPLayer.cpp; sourceTree = "<group>"; };
+		31EFFB6C170E97BF0070399D /* MPLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPLayer.h; path = ../Classes/MPLayer.h; sourceTree = "<group>"; };
+		31EFFB6D170E97BF0070399D /* MPTurnerMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPTurnerMapLayer.cpp; path = ../Classes/MPTurnerMapLayer.cpp; sourceTree = "<group>"; };
+		31EFFB6E170E97BF0070399D /* MPTurnerMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPTurnerMapLayer.h; path = ../Classes/MPTurnerMapLayer.h; sourceTree = "<group>"; };
 		31F1A39D17075BCB00CA82D0 /* CCPhysicsDebugNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCPhysicsDebugNode.cpp; path = ../Classes/physics_nodes/CCPhysicsDebugNode.cpp; sourceTree = "<group>"; };
 		31F1A39E17075BCB00CA82D0 /* CCPhysicsDebugNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCPhysicsDebugNode.h; path = ../Classes/physics_nodes/CCPhysicsDebugNode.h; sourceTree = "<group>"; };
 		31F1A39F17075BCB00CA82D0 /* CCPhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCPhysicsSprite.cpp; path = ../Classes/physics_nodes/CCPhysicsSprite.cpp; sourceTree = "<group>"; };
@@ -511,6 +517,10 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				31EFFB6B170E97BE0070399D /* MPLayer.cpp */,
+				31EFFB6C170E97BF0070399D /* MPLayer.h */,
+				31EFFB6D170E97BF0070399D /* MPTurnerMapLayer.cpp */,
+				31EFFB6E170E97BF0070399D /* MPTurnerMapLayer.h */,
 				31EFD536170E4F5B00F02C42 /* MPKeyboard.cpp */,
 				31EFD537170E4F5B00F02C42 /* MPKeyboard.h */,
 				F82987BA1703B68F00EE6CF7 /* MPApplication.h */,
@@ -740,6 +750,8 @@
 				310165ED17092842006235AB /* MPTitleLayer.cpp in Sources */,
 				F8E1309F170BE4C200BC8708 /* MPScenes.cpp in Sources */,
 				31EFD538170E4F5B00F02C42 /* MPKeyboard.cpp in Sources */,
+				31EFFB6F170E97BF0070399D /* MPLayer.cpp in Sources */,
+				31EFFB70170E97BF0070399D /* MPTurnerMapLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
