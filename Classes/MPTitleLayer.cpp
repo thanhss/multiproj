@@ -13,77 +13,81 @@
 
 USING_NS_CC;
 
-bool MPTitleLayer::init(){
-    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+bool MPTitleLayer::init()
+{
+	CCDirector * director = CCDirector::sharedDirector();
+
+    CCPoint origin = director->getVisibleOrigin();
+
+	float h = director->getVisibleSize().height;
+	float w = director->getVisibleSize().width;
+
+//    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+//    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
     // Scene title
-    CCLabelTTF* pLabel = CCLabelTTF::create("Title Scene", "Arial", TITLE_FONT_SIZE);
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
+    CCLabelTTF * pLabel = CCLabelTTF::create("Title Scene", "Arial", TITLE_FONT_SIZE);
+    pLabel->setPosition(
+		ccp(origin.x + w/2, origin.y + h - pLabel->getContentSize().height)
+	);
     this->addChild(pLabel, 1);
     
 	// Layout the selectable labels.
     
-	int yInc = 40;
-	int xPos = 250;
-	int yPos = 100;
+	int yInc = 70;
+	int xPos = w/2;
+	int yPos = h - 2* yInc;
     
 	// Box2D menu item label
-    CCLabelTTF* box2DLabel = CCLabelTTF::create("Box 2D Scene", "Arial", TITLE_FONT_SIZE);
+    CCLabelTTF * box2DLabel = CCLabelTTF::create("Box 2D Scene", "Arial", TITLE_FONT_SIZE);
     box2DLabel->setPosition(CCPointZero);
-    CCMenuItemLabel *box2DItem = CCMenuItemLabel::create(
-                                                         box2DLabel,
-                                                         this,
-                                                         menu_selector(MPTitleLayer::selectBox2D));
+    CCMenuItemLabel * box2DItem = 
+		CCMenuItemLabel::create(box2DLabel, this, menu_selector(MPTitleLayer::selectBox2D));
 	box2DItem->setPosition(xPos, yPos);
-    
+
 	// GUI Test menu item label
-	yPos += yInc;
-    CCLabelTTF* guiTestLabel = CCLabelTTF::create("GUI Test Scene", "Arial", TITLE_FONT_SIZE);
+	yPos -= yInc;
+    CCLabelTTF * guiTestLabel = CCLabelTTF::create("GUI Test Scene", "Arial", TITLE_FONT_SIZE);
     guiTestLabel->setPosition(CCPointZero);
-    CCMenuItemLabel *guiTestItem = CCMenuItemLabel::create(
-                                                           guiTestLabel,
-                                                           this,
-                                                           menu_selector(MPTitleLayer::selectGuiTest));
+    CCMenuItemLabel * guiTestItem = 
+		CCMenuItemLabel::create(guiTestLabel, this, menu_selector(MPTitleLayer::selectGuiTest));
 	guiTestItem->setPosition(xPos, yPos);
     
     // Audio Button
-	yPos += yInc;
-    CCLabelTTF* audioLabel = CCLabelTTF::create("Audio Scene", "Arial", TITLE_FONT_SIZE);
+	yPos -= yInc;
+    CCLabelTTF * audioLabel = CCLabelTTF::create("Audio Scene", "Arial", TITLE_FONT_SIZE);
     audioLabel->setPosition(CCPointZero);
-    
-    CCMenuItemLabel *audioItem = CCMenuItemLabel::create(
-                                                         audioLabel,
-                                                         this,
-                                                         menu_selector(MPTitleLayer::selectAudio));
+    CCMenuItemLabel * audioItem = 
+		CCMenuItemLabel::create(audioLabel, this, menu_selector(MPTitleLayer::selectAudio));
 	audioItem->setPosition(xPos, yPos);
     
     // Map Button
-	yPos += yInc;
-    CCLabelTTF* mapLabel = CCLabelTTF::create("Map Scene", "Arial", TITLE_FONT_SIZE);
-    mapLabel->setPosition(CCPointZero);
-    
-    CCMenuItemLabel *mapItem = CCMenuItemLabel::create(
-                                                       mapLabel,
-                                                       this,
-                                                       menu_selector(MPTitleLayer::selectMap));
+	yPos -= yInc;
+    CCLabelTTF * mapLabel = CCLabelTTF::create("Map Scene", "Arial", TITLE_FONT_SIZE);
+    mapLabel->setPosition(CCPointZero);    
+    CCMenuItemLabel * mapItem = 
+		CCMenuItemLabel::create(mapLabel, this, menu_selector(MPTitleLayer::selectMap));
 	mapItem->setPosition(xPos, yPos);
     
-    
+    // Turner Map Button
+	yPos -= yInc;
+    CCLabelTTF* turnerMapLabel = CCLabelTTF::create("Turner Map Scene", "Arial", TITLE_FONT_SIZE);
+    turnerMapLabel->setPosition(CCPointZero);    
+    CCMenuItemLabel * turnerMapItem = 
+		CCMenuItemLabel::create(turnerMapLabel, this, menu_selector(MPTitleLayer::selectTurnerMap));
+	turnerMapItem->setPosition(xPos, yPos);    
     
 	// Close button
-    CCMenuItemImage *closeItem = CCMenuItemImage::create(
-                                                         "CloseNormal.png",
-                                                         "CloseSelected.png",
-                                                         this,
-                                                         menu_selector(MPTitleLayer::menuCloseCallback));
-	closeItem->setPosition(ccp(
-                               origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
-                               origin.y + closeItem->getContentSize().height/2));
+    CCMenuItemImage * closeItem = 
+		CCMenuItemImage::create("CloseNormal.png", "CloseSelected.png", this, menu_selector(MPTitleLayer::menuCloseCallback));
+	closeItem->setPosition(
+		ccp( origin.x + w - closeItem->getContentSize().width/2 ,
+             origin.y + closeItem->getContentSize().height/2
+		) 
+	);
     
 	// Menu container
-    CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, closeItem, NULL);
+    CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, turnerMapItem, closeItem, NULL);
     menu->setPosition(CCPointZero);
     this->addChild(menu, 1);
     
@@ -108,6 +112,11 @@ void MPTitleLayer::selectAudio(CCObject* pSender)
 void MPTitleLayer::selectMap(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPScenes::createMapScene());
+}
+
+void MPTitleLayer::selectTurnerMap(CCObject* pSender)
+{
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createTurnerMapScene());
 }
 
 void MPTitleLayer::menuCloseCallback(CCObject* pSender)

@@ -1,12 +1,16 @@
 #include "stdafx.h"
-#include "MPMapLayer.h"
+#include "MPLayer.h"
 #include "MPScenes.h"
 #include "MPMacros.h"
 
 USING_NS_CC;
 
-bool MPMapLayer::init()
-{
+//void MPLayer::addBackButton()
+//{
+//}
+
+bool MPLayer::init(){
+	/*
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
@@ -68,7 +72,8 @@ bool MPMapLayer::init()
 	std::cout << objectName->getCString() << std::endl;
 
 //	player->setPosition(ccp(positionX,positionY));
-	
+*/
+
 /*
     CCSprite *tile = layer->tileAt(ccp(5,6));
     assert(tile != NULL);
@@ -94,7 +99,7 @@ bool MPMapLayer::init()
     return true;
 }
 
-void MPMapLayer::antiAliasMap(CCTMXTiledMap * map)
+void MPLayer::antiAliasMap(CCTMXTiledMap * map)
 {
     CCArray * pChildrenArray = map->getChildren();
     CCSpriteBatchNode* child = NULL;
@@ -110,8 +115,7 @@ void MPMapLayer::antiAliasMap(CCTMXTiledMap * map)
     }
 }
 
-void MPMapLayer::titleCallback(CCObject* pSender)
-{
-	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
-}
-
+//void MPLayer::titleCallback(CCObject* pSender)
+//{
+//	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
+//}

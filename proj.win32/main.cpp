@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "main.h"
-#include "../Classes/MPApplication.h"
 #include "CCEGLView.h"
+#include "main.h"
+#include "MPApplication.h"
 #include "MPKeyboard.h"
 
 USING_NS_CC;
@@ -26,14 +26,11 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // create the application instance
     MPApplication app;
-    CCEGLView* eglView = CCEGLView::sharedOpenGLView();
+    CCEGLView * eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("Multiproj");
-    eglView->setFrameSize(2048, 1536);
-    // The resolution of ipad3 is very large. In general, PC's resolution is smaller than it.
-    // So we need to invoke 'setFrameZoomFactor'(only valid on desktop(win32, mac, linux)) to make the window smaller.
-    eglView->setFrameZoomFactor(0.4f);
+    eglView->setFrameSize(1024, 768); // 4/3
+    eglView->setFrameZoomFactor(1.0f);
 
 	eglView->setAccelerometerKeyHook(onKeyUpDown);
 

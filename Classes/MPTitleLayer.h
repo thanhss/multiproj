@@ -21,6 +21,8 @@ public:
     
     void selectMap(CCObject* pSender);
 
+    void selectTurnerMap(CCObject* pSender);
+
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "MPScenes.h"
 #include "MPTitleLayer.h"
 #include "MPMapLayer.h"
+#include "MPTurnerMapLayer.h"
 #include "MPGuiTestLayer.h"
 #include "MPBox2DLayer.h"
 #include "MPAudioLayer.h"
@@ -20,6 +21,13 @@ cocos2d::CCScene * MPScenes::createTitleScene(){
 cocos2d::CCScene * MPScenes::createMapScene(){
     CCScene *scene = CCScene::create();
     CCLayer *layer = MPMapLayer::create();
+    scene->addChild(layer);
+    return scene;
+}
+
+cocos2d::CCScene * MPScenes::createTurnerMapScene(){
+    CCScene *scene = CCScene::create();
+    CCLayer *layer = MPTurnerMapLayer::create();
     scene->addChild(layer);
     return scene;
 }
