@@ -13,6 +13,7 @@ public:
     static cocos2d::CCScene * createTurnerMapScene();
     static cocos2d::CCScene * createBox2DScene();
     static cocos2d::CCScene * createTitleScene();
+	static cocos2d::CCScene * createThanhScene();
 };
 
 #endif

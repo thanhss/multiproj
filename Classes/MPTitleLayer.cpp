@@ -75,7 +75,14 @@ bool MPTitleLayer::init()
     turnerMapLabel->setPosition(CCPointZero);    
     CCMenuItemLabel * turnerMapItem = 
 		CCMenuItemLabel::create(turnerMapLabel, this, menu_selector(MPTitleLayer::selectTurnerMap));
-	turnerMapItem->setPosition(xPos, yPos);    
+	turnerMapItem->setPosition(xPos, yPos);
+
+	// Thanh Button
+	yPos -= yInc;
+    CCLabelTTF* thanhLabel = CCLabelTTF::create("Thanh Scene", "Arial", TITLE_FONT_SIZE);
+    thanhLabel->setPosition(CCPointZero);
+    CCMenuItemLabel * thanhItem = CCMenuItemLabel::create(thanhLabel, this, menu_selector(MPTitleLayer::selectThanh));
+	thanhItem->setPosition(xPos, yPos);
     
 	// Close button
     CCMenuItemImage * closeItem = 
@@ -87,7 +94,7 @@ bool MPTitleLayer::init()
 	);
     
 	// Menu container
-    CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, turnerMapItem, closeItem, NULL);
+	CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, turnerMapItem, thanhItem, closeItem, NULL);
     menu->setPosition(CCPointZero);
     this->addChild(menu, 1);
     
@@ -117,6 +124,11 @@ void MPTitleLayer::selectMap(CCObject* pSender)
 void MPTitleLayer::selectTurnerMap(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPScenes::createTurnerMapScene());
+}
+
+void MPTitleLayer::selectThanh(CCObject* pSender)
+{
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createThanhScene());
 }
 
 void MPTitleLayer::menuCloseCallback(CCObject* pSender)

@@ -98,6 +98,7 @@
     <ClInclude Include="..\Classes\MPMacros.h" />
     <ClInclude Include="..\Classes\MPMapLayer.h" />
     <ClInclude Include="..\Classes\MPScenes.h" />
+    <ClInclude Include="..\Classes\MPThanhLayer.h" />
     <ClInclude Include="..\Classes\MPTitleLayer.h" />
     <ClInclude Include="..\Classes\MPTurnerMapLayer.h" />
     <ClInclude Include="..\Classes\physics_nodes\CCPhysicsDebugNode.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\Classes\MPLayer.cpp" />
     <ClCompile Include="..\Classes\MPMapLayer.cpp" />
     <ClCompile Include="..\Classes\MPScenes.cpp" />
+    <ClCompile Include="..\Classes\MPThanhLayer.cpp" />
     <ClCompile Include="..\Classes\MPTitleLayer.cpp" />
     <ClCompile Include="..\Classes\MPTurnerMapLayer.cpp" />
     <ClCompile Include="..\Classes\physics_nodes\CCPhysicsDebugNode.cpp" />

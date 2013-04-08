@@ -23,6 +23,8 @@ public:
 
     void selectTurnerMap(CCObject* pSender);
 
+	void selectThanh(CCObject* pSender);
+
 };
 
 #endif

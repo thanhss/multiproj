@@ -8,6 +8,7 @@
 #include "MPGuiTestLayer.h"
 #include "MPBox2DLayer.h"
 #include "MPAudioLayer.h"
+#include "MPThanhLayer.h"
 
 USING_NS_CC;
 
@@ -49,6 +50,13 @@ cocos2d::CCScene * MPScenes::createBox2DScene(){
 cocos2d::CCScene * MPScenes::createGUIScene(){
     CCScene *scene = CCScene::create();
 	CCLayer * layer = MPGuiTestLayer::create();
+    scene->addChild(layer);
+    return scene;
+}
+
+cocos2d::CCScene * MPScenes::createThanhScene(){
+    CCScene *scene = CCScene::create();
+	CCLayer * layer = MPThanhLayer::create();
     scene->addChild(layer);
     return scene;
 }
